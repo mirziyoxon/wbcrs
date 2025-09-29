@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development – Course</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background: #222;
+      padding: 15px;
+      text-align: center;
+      color: white;
+    }
+    h1 { margin: 0; font-size: 20px; }
+    .lessons {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .lesson {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .lesson:hover { background: #f0f0f0; }
+    .lesson.locked {
+      opacity: 0.6;
+    }
+    .lesson span {
+      font-weight: bold;
+    }
+    .lock {
+      color: #888;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Development – Lessons</h1>
+  </header>
+
+  <div class="lessons">
+    <!-- Lesson 1 ochiq -->
+    <div class="lesson" onclick="openLesson('lesson1.html')">
+      <span>Lesson 1: Introduction</span>
+      <div>??</div>
+    </div>
+
+    <!-- Quluflangan darslar -->
+    <div class="lesson locked" onclick="unlockLesson('lesson2.html')">
+      <span>Lesson 2: HTML Basics</span>
+      <div class="lock">??</div>
+    </div>
+    <div class="lesson locked" onclick="unlockLesson('lesson3.html')">
+      <span>Lesson 3: CSS Fundamentals</span>
+      <div class="lock">??</div>
+    </div>
+    <div class="lesson locked" onclick="unlockLesson('lesson4.html')">
+      <span>Lesson 4: JavaScript Intro</span>
+      <div class="lock">??</div>
+    </div>
+  </div>
+
+  <script>
+    // Ochiq dars
+    function openLesson(url) {
+      window.location.href = url;
+    }
+
+    // Quluflangan darsni ochish uchun kod so‘raydi
+    function unlockLesson(url) {
+      let code = prompt("?? Dars kodini kiriting:");
+      if (code === "1234") {
+        window.location.href = url;
+      } else {
+        alert("? Kod noto‘g‘ri!");
+      }
+    }
+  </script>
+</body>
+</html>
